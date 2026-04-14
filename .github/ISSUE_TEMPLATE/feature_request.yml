@@ -1,47 +1,78 @@
-name: 功能请求 / Feature request
-title: '[Feature] '
-description: 提出你的功能请求 / Propose your feature request
-labels: ['enhancement']
-type: 'Feature'
-
+name: Feature Request
+description: Suggest a new feature or enhancement for Clash Verge Rev
+title: "[Feature] "
+labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## 在提交问题之前，请确认以下事项：
-        1. 请 **确保** 您已经查阅了 [Clash Verge Rev 官方文档](https://clash-verge-rev.github.io/guide/term.html) 确认软件不存在类似的功能
-        2. 请 **确保** [已有的问题](https://github.com/clash-verge-rev/clash-verge-rev/issues?q=is%3Aissue) 中没有人提交过相似 issue，否则请在已有的 issue 下进行讨论
-        3. 请 **务必** 给issue填写一个简洁明了的标题，以便他人快速检索
-        4. 请 **务必** 先下载 [AutoBuild](https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/autobuild) 版本测试，确保该功能还未实现
-        5. 请 **务必** 按照模板规范详细描述问题，否则 issue 将会被关闭
-        ## Before submitting the issue, please make sure of the following checklist:
-        1. Please make sure you have read the [Clash Verge Rev official documentation](https://clash-verge-rev.github.io/guide/term.html) to confirm that the software does not have similar functions
-        2. Please make sure there is no similar issue in the [existing issues](https://github.com/clash-verge-rev/clash-verge-rev/issues?q=is%3Aissue), otherwise please discuss under the existing issue
-        3. Please be sure to fill in a concise and clear title for the issue so that others can quickly search
-        4. Please be sure to download the [AutoBuild](https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/autobuild) version for testing to ensure that the function has not been implemented
-        5. Please describe the problem in detail according to the template specification, otherwise the issue will be closed
+        ## Feature Request
+        Thank you for taking the time to suggest a new feature! Please fill out the form below as completely as possible.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Please confirm the following before submitting your feature request.
+      options:
+        - label: I have searched the existing issues and this feature has not been requested before.
+          required: true
+        - label: I have read the documentation and this feature is not already available.
+          required: true
 
   - type: textarea
     id: description
     attributes:
-      label: 功能描述 / Feature description
-      description: 详细清晰地描述你的功能请求 / A clear and concise description of what the feature is
+      label: Feature Description
+      description: A clear and concise description of the feature you would like to see.
+      placeholder: Describe the feature you want...
     validations:
       required: true
+
   - type: textarea
+    id: motivation
     attributes:
-      label: 使用场景 / Use case
-      description: 请描述你的功能请求的使用场景 / Please describe the use case of your feature request
+      label: Motivation / Use Case
+      description: Why do you need this feature? What problem does it solve?
+      placeholder: Explain the problem this feature would solve or the use case it enables...
     validations:
       required: true
-  - type: checkboxes
-    id: os-labels
+
+  - type: textarea
+    id: proposed_solution
     attributes:
-      label: 适用系统 / Target OS
-      description: 请选择该功能适用的操作系统（至少选择一个） / Please select the operating system(s) for this feature request (select at least one)
+      label: Proposed Solution
+      description: If you have an idea of how this feature could be implemented, describe it here.
+      placeholder: Describe your proposed solution (optional)...
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you considered any alternative solutions or workarounds?
+      placeholder: Describe any alternatives you have considered...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
       options:
-        - label: windows
-        - label: macos
-        - label: linux
+        - Low - Nice to have
+        - Medium - Would improve my workflow
+        - High - Blocking my use case
     validations:
       required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or mockups about here.
+      placeholder: Any additional information...
+    validations:
+      required: false
